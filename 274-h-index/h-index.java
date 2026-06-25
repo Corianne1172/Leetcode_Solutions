@@ -9,11 +9,7 @@ class Solution {
                     paperCount[i]++;
                 }
             }
-            if (paperCount[i] >= citations[i]){
-                hIndex = Math.max(hIndex, citations[i]);
-            } else {
-                hIndex = Math.max(hIndex, paperCount[i]);
-            }
+            hIndex = Math.max(hIndex, Math.min(paperCount[i], citations[i]));
 
         }
         return hIndex;
